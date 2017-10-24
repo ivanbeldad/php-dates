@@ -15,12 +15,12 @@ composer require ivandelabeldad/dates
 ## Usage
 
 ### Create a Date
-```
+```php
 $date = Date::createDate(1999, 12, 31);
 ```
 
 ### Get a Date range
-```
+```php
 $startDate = Date::createDate(2000, 1, 1);
 $endDate = Date::createDate(2000, 12, 31);
 
@@ -29,7 +29,7 @@ $dates = Date::between($startDate, $endDate);
 ```
 
 ### Example of filtering usage
-```
+```php
 // Date[]
 $dates = Date::between($startDate, $endDate);
 
