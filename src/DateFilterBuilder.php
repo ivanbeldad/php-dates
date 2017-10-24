@@ -1,7 +1,8 @@
 <?php
 
-require_once 'autoload.php';
+namespace Date;
 
+use RuntimeException;
 
 class DateFilterBuilder
 {
@@ -16,6 +17,7 @@ class DateFilterBuilder
     {
         $this->dates = $dates;
         $this->checkErrors();
+        new Date();
     }
 
     public static function generate(array $dates)

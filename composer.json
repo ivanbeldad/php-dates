@@ -1,0 +1,19 @@
+{
+    "name": "ivandelabeldad/dates",
+    "description": "Basic Dates library for PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan de la Beldad",
+            "email": "ivandelabeldad@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Date\\": "src/"
+        }
+    }
+}
