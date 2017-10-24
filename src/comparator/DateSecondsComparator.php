@@ -11,7 +11,7 @@ class DateSecondsComparator implements DateComparator
 
     function compareTo($o1, $o2)
     {
-        return $o1->getSeconds() > $o2->getSeconds();
+        return $o1->getSecond() > $o2->getSecond();
     }
 
 }

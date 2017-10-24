@@ -11,7 +11,7 @@ class DateHoursComparator implements DateComparator
 
     function compareTo($o1, $o2)
     {
-        return $o1->getHours() > $o2->getHours();
+        return $o1->getHour() > $o2->getHour();
     }
 
 }

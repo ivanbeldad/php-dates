@@ -2,36 +2,13 @@
 
 namespace Date;
 
-
-class Date
+class Date extends DateObject
 {
-    const MIN_TIME = -2147483648;
-    const MAX_TIME = 2147472000;
 
-    /** @var int */
-    private $time;
-    /** @var int */
-    private $year;
-    /** @var int */
-    private $month;
-    /** @var int */
-    private $day;
-    /** @var int */
-    private $hours;
-    /** @var int */
-    private $minutes;
-    /** @var int */
-    private $seconds;
-    /** @var int */
-    private $wday;
-    /** @var int */
-    private $monthText;
-    /** @var int */
-    private $weekText;
-    /** @var int */
-    private $season;
-    /** @var int */
-    private $seasonText;
+    /** @const int */
+    const MIN_TIME = -2147483648;
+    /** @const int */
+    const MAX_TIME = 2147472000;
 
     /**
      * Date constructor.
@@ -39,6 +16,7 @@ class Date
      */
     public function __construct($time = null)
     {
+        parent::__construct([]);
         if ($time === null) $time = time();
         $this->setTime($time);
     }
@@ -58,12 +36,6 @@ class Date
         return new Date($time);
     }
 
-    /** @return int */
-    public function getTime()
-    {
-        return $this->time;
-    }
-
     /** @param $time */
     public function setTime($time)
     {
@@ -78,137 +50,107 @@ class Date
         $this->year = $date['year'];
         $this->month = $date['mon'];
         $this->day = $date['mday'];
-        $this->hours = $date['hours'];
-        $this->minutes = $date['minutes'];
-        $this->seconds = $date['seconds'];
-        $this->wday = $date['wday'];
+        $this->hour = $date['hours'];
+        $this->minute = $date['minutes'];
+        $this->second = $date['seconds'];
+        $this->dayOfWeek = $date['wday'];
         $this->weekText = $date['weekday'];
         $this->monthText = $date['month'];
         $this->updateSeason();
     }
 
-    /** @return int */
-    public function getYear()
-    {
-        return $this->year;
-    }
-
     /** @param int $year */
     public function setYear($year)
     {
-        $this->year = $year;
+        parent::setYear($year);
         $this->updateTime();
-    }
-
-    /** @return int */
-    public function getMonth()
-    {
-        return $this->month;
     }
 
     /** @param int $month */
     public function setMonth($month)
     {
-        $this->month = $month;
+        parent::setMonth($month);
         $this->updateTime();
-    }
-
-    /** @return int */
-    public function getDay()
-    {
-        return $this->day;
     }
 
     /** @param int $day */
     public function setDay($day)
     {
-        $this->day = $day;
+        parent::setDay($day);
         $this->updateTime();
-    }
-
-    /** @return int */
-    public function getHours()
-    {
-        return $this->hours;
     }
 
     /** @param int $hours */
-    public function setHours($hours)
+    public function setHour($hours)
     {
-        $this->hours = $hours;
+        parent::setHour($hours);
         $this->updateTime();
-    }
-
-    /** @return int */
-    public function getMinutes()
-    {
-        return $this->minutes;
     }
 
     /** @param int $minutes */
-    public function setMinutes($minutes)
+    public function setMinute($minutes)
     {
-        $this->minutes = $minutes;
+        parent::setMinute($minutes);
         $this->updateTime();
-    }
-
-    /** @return int */
-    public function getSeconds()
-    {
-        return $this->seconds;
     }
 
     /** @param int $seconds */
-    public function setSeconds($seconds)
+    public function setSecond($seconds)
     {
-        $this->seconds = $seconds;
+        parent::setSecond($seconds);
         $this->updateTime();
     }
 
-    /** @return int */
-    public function getDayOfWeek()
+    /**
+     * @param int $wday
+     */
+    public function setWday($wday)
     {
-        return $this->wday;
-    }
-
-    /** @return string */
-    public function getMonthDay()
-    {
-        return $this->monthText;
-    }
-
-    /** @return string */
-    public function getWeekDay()
-    {
-        return $this->weekText;
-    }
-
-    /** @return int */
-    public function getSeasonNumber()
-    {
-        return $this->season;
-    }
-
-    /** @return string */
-    public function getSeason()
-    {
-        return $this->seasonText;
     }
 
     /**
-     * @param Date $date
+     * @param int $monthText
+     */
+    public function setMonthText($monthText)
+    {
+    }
+
+    /**
+     * @param int $weekText
+     */
+    public function setWeekText($weekText)
+    {
+    }
+
+    /**
+     * @param int $season
+     */
+    public function setSeason($season)
+    {
+    }
+
+    /**
+     * @param int $seasonText
+     */
+    public function setSeasonText($seasonText)
+    {
+    }
+
+    /**
+     * @param Date $date1
+     * @param Date $date2
      * @return int
      */
-    public function numberOfDaysBetween($date)
+    public static function timeBetween(Date $date1, Date $date2)
     {
-        $minDate = $this->min($date);
-        $maxDate = $this->max($date);
-        $numberOfDays = 0;
-        while ($minDate->getTime() <= $maxDate->getTime()) {
-            ++$numberOfDays;
-            $minDate = Date::createDate($minDate->getYear(), $minDate->getMonth(), $minDate->getDay() + 1);
+        if ($date1->getTime() > $date2->getTime()) {
+            $minDate = $date2;
+            $maxDate = $date1;
+        } else {
+            $minDate = $date1;
+            $maxDate = $date2;
         }
-        return $numberOfDays;
+        return $maxDate->time - $minDate->time;
     }
 
     /**
@@ -236,7 +178,7 @@ class Date
 
     private function updateTime()
     {
-        $this->setTime(mktime($this->hours, $this->minutes, $this->seconds, $this->month, $this->day, $this->year));
+        $this->setTime(mktime($this->hour, $this->minute, $this->second, $this->month, $this->day, $this->year));
     }
 
     private function updateSeason()
