@@ -1,6 +1,6 @@
 # PHP Dates
 
-[![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)](https://github.com/ivandelabeldad/api-rackian)
+[![Packagist](https://img.shields.io/packagist/v/ivandelabeldad/dates.svg)](https://packagist.org/packages/ivandelabeldad/dates)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ivandelabeldad/api-rackian/blob/master/LICENSE)
 
 Basic Dates library for PHP
@@ -24,7 +24,7 @@ $date = Date::createDate(1999, 12, 31);
 $startDate = Date::createDate(2000, 1, 1);
 $endDate = Date::createDate(2000, 12, 31);
 
-// Constains every day of the year 2000
+// Contains every day of the year 2000
 $dates = Date::between($startDate, $endDate);
 ```
 
@@ -44,4 +44,4 @@ $filtered = DateFilterBuilder::generate($dates)
 ## License
 
 The API Rackian is open-sourced software licensed under
-the MIT LICENSE
+the [MIT LICENSE](https://github.com/ivandelabeldad/php-dates/blob/master/LICENSE)
