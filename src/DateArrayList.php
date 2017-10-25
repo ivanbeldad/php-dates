@@ -122,4 +122,24 @@ class DateArrayList extends ArrayList
         parent::sort($comparator, $ascendent);
     }
 
+    /**
+     * @param callable $callable
+     * @return DateArrayList
+     */
+    public function mapDates(callable $callable)
+    {
+        $dates = parent::map($callable);
+        return new DateArrayList($dates->toArray());
+    }
+
+    /**
+     * @param callable $callable
+     * @return DateArrayList
+     */
+    public function filter(callable $callable)
+    {
+        $dates = parent::filter($callable);
+        return new DateArrayList($dates->toArray());
+    }
+
 }

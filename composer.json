@@ -11,7 +11,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "ivandelabeldad/collections": "^1.0"
+        "ivandelabeldad/collections": "^1.0.0"
     },
     "autoload": {
         "psr-4": {
