@@ -3,7 +3,6 @@
 namespace Time;
 
 use Collection\ArrayList;
-use Collection\Comparator;
 
 /**
  * Class TimeArrayList
@@ -11,12 +10,17 @@ use Collection\Comparator;
  */
 class TimeArrayList extends ArrayList
 {
+
+    /** @var Time */
+    protected $type;
+
     /**
      * TimeArrayList constructor.
      * @param array $elements
      */
     public function __construct(array $elements = [])
     {
+        $this->type = Time::now();
         parent::__construct($elements);
     }
 
@@ -106,7 +110,7 @@ class TimeArrayList extends ArrayList
 
     /**
      * @param Time $element
-     * @return int|string
+     * @return int
      */
     public function indexOf($element)
     {
@@ -114,7 +118,7 @@ class TimeArrayList extends ArrayList
     }
 
     /**
-     * @param callable|Comparator $comparator
+     * @param callable|TimeComparator $comparator
      * @param bool $ascendent
      */
     public function sort($comparator, $ascendent = true)

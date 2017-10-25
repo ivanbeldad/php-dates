@@ -3,20 +3,24 @@
 namespace Time;
 
 use Collection\ArrayList;
-use Collection\Comparator;
 
 /**
- * Class DateTimeArrayList
+ * Class DateArrayList
  * @package Time
  */
-class DateTimeArrayList extends ArrayList
+class DateArrayList extends ArrayList
 {
+
+    /** @var Date */
+    protected $type;
+
     /**
-     * DateTimeArrayList constructor.
+     * DateArrayList constructor.
      * @param array $elements
      */
     public function __construct(array $elements = [])
     {
+        $this->type = Date::now();
         parent::__construct($elements);
     }
 
@@ -105,8 +109,8 @@ class DateTimeArrayList extends ArrayList
     }
 
     /**
-     * @param Date $element
-     * @return int|string
+     * @param mixed $element
+     * @return int
      */
     public function indexOf($element)
     {
@@ -114,7 +118,7 @@ class DateTimeArrayList extends ArrayList
     }
 
     /**
-     * @param callable|Comparator $comparator
+     * @param callable|DateComparator $comparator
      * @param bool $ascendent
      */
     public function sort($comparator, $ascendent = true)
@@ -132,7 +136,7 @@ class DateTimeArrayList extends ArrayList
 
     /**
      * @param callable $callable
-     * @return DateTimeArrayList|mixed
+     * @return DateArrayList|mixed
      */
     public function filter(callable $callable)
     {
@@ -141,7 +145,7 @@ class DateTimeArrayList extends ArrayList
 
     /**
      * @param callable $callable
-     * @return DateTimeArrayList|mixed
+     * @return DateArrayList|mixed
      */
     public function map(callable $callable)
     {
