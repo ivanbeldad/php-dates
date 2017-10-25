@@ -2,13 +2,11 @@
 
 namespace Date;
 
-use RuntimeException;
-
 class DateFilterBuilder
 {
 
     /** @var DateFilter */
-    private $dateFilter;
+    protected $dateFilter;
 
     /**
      * DateFilterBuilder constructor.
@@ -17,7 +15,6 @@ class DateFilterBuilder
     public function __construct(DateFilter $dateFilter)
     {
         $this->dateFilter = $dateFilter;
-        $this->checkErrors();
     }
 
     /**
@@ -106,15 +103,6 @@ class DateFilterBuilder
     public function build()
     {
         return $this->dateFilter->get();
-    }
-
-    private function checkErrors()
-    {
-        foreach ($this->dateFilter->get() as $date) {
-            if (!($date instanceof Date)) {
-                throw new RuntimeException("DateFilterBuilder only can receive an array of Dates");
-            }
-        }
     }
 
 }

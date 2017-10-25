@@ -8,13 +8,13 @@ class DateFilter
 {
 
     /** @var DateArrayList */
-    private $dates;
+    protected $dates;
 
     /**
      * DateFilterBuilder constructor.
      * @param DateArrayList $dates
      */
-    private function __construct(DateArrayList $dates)
+    protected function __construct(DateArrayList $dates)
     {
         $this->dates = $dates;
         $this->checkErrors();
@@ -119,7 +119,7 @@ class DateFilter
         return $this->dates;
     }
 
-    private function checkErrors()
+    protected function checkErrors()
     {
         foreach ($this->dates as $date) {
             if (!($date instanceof Date)) {
