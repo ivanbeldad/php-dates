@@ -68,11 +68,19 @@ class TimeArrayList extends ArrayList
     }
 
     /**
+     * @param Time $element
+     */
+    public function remove($element)
+    {
+        parent::remove($element);
+    }
+
+    /**
      * @param int $index
      */
-    public function remove($index)
+    public function removeAt($index)
     {
-        parent::remove($index);
+        parent::removeAt($index);
     }
 
     /**
@@ -89,6 +97,14 @@ class TimeArrayList extends ArrayList
     public function size()
     {
         return parent::size();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEmpty()
+    {
+        return parent::isEmpty();
     }
 
     /**
