@@ -1,0 +1,51 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "5b5b32d8e10157d34f849cab50918b43",
+    "packages": [
+        {
+            "name": "ivandelabeldad/collections",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ivandelabeldad/php-collections.git",
+                "reference": "544e2cf1b917f3c0ae9772f70b44ce3033e1fe04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ivandelabeldad/php-collections/zipball/544e2cf1b917f3c0ae9772f70b44ce3033e1fe04",
+                "reference": "544e2cf1b917f3c0ae9772f70b44ce3033e1fe04",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Collection\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan de la Beldad",
+                    "email": "ivandelabeldad@gmail.com"
+                }
+            ],
+            "description": "Basic Collections library for PHP",
+            "time": "2017-10-24T17:51:10+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
