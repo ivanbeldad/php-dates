@@ -5,15 +5,15 @@ namespace Time;
 use Collection\Comparator;
 
 /**
- * Interface DateTimeComparator
+ * Interface TimeComparator
  * @package Time
  */
-interface DateTimeComparator extends Comparator
+interface TimeComparator extends Comparator
 {
 
     /**
-     * @param DateTime $o1
-     * @param DateTime $o2
+     * @param Time $o1
+     * @param Time $o2
      * @return int
      */
     public function compareTo($o1, $o2);

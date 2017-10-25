@@ -1,19 +1,16 @@
 <?php
 
-namespace Time;
+
+namespace Date;
 
 use Collection\Comparator;
 
-/**
- * Interface DateComparator
- * @package Time
- */
 interface DateComparator extends Comparator
 {
 
     /**
-     * @param Date $o1
-     * @param Date $o2
+     * @param DateObject $o1
+     * @param DateObject $o2
      * @return int
      */
     public function compareTo($o1, $o2);
