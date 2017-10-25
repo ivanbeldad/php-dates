@@ -67,11 +67,8 @@ $list->sort(new DateTimeComparator(), false);
 
 ### Example of filtering usage
 ```php
-// Date[]
-$dates = Date::between($startDate, $endDate);
-
 // Get only weekends in summer and spring
-$filtered = DateFilterBuilder::generate($dates)
+$filtered = DateFilter::builder($listOfDates)
 	->filterBySeasons([Season::SUMMER, Season::SPRING])
    	->filterByDaysOfWeek([DayOfWeek::SATURDAY, DayOfWeek::SUNDAY])
     ->build();
