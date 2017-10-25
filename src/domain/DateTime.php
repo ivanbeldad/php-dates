@@ -23,10 +23,10 @@ class DateTime implements Equality, TimeUpdatable, JsonSerializable
      * DateTime constructor.
      * @param int $time
      */
-    private function __construct($time = 0)
+    protected function __construct($time = 0)
     {
         $this->date = Date::now();
-        $this->time = new Time();
+        $this->time = Time::now();
         $this->updateFromUnixTime($time);
     }
 
@@ -42,7 +42,7 @@ class DateTime implements Equality, TimeUpdatable, JsonSerializable
      * @param int $time
      * @return DateTime
      */
-    public static function fromTime($time = 0)
+    public static function fromUnixTime($time = 0)
     {
         return new DateTime($time);
     }

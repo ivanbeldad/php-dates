@@ -34,7 +34,7 @@ class Date implements Equality, TimeUpdatable, JsonSerializable
      * Date constructor.
      * @param $time
      */
-    private function __construct($time = 0)
+    protected function __construct($time = 0)
     {
         $this->month = new Month();
         $this->dayOfWeek = new DayOfWeek();
@@ -54,7 +54,7 @@ class Date implements Equality, TimeUpdatable, JsonSerializable
      * @param int $time
      * @return Date
      */
-    public static function fromTime($time = 0)
+    public static function fromUnixTime($time = 0)
     {
         return new Date($time);
     }
@@ -163,7 +163,7 @@ class Date implements Equality, TimeUpdatable, JsonSerializable
      */
     public function isLeapYear()
     {
-        $tmp = Date::fromTime($this->unixTime);
+        $tmp = Date::fromUnixTime($this->unixTime);
         $tmp->setMonth(Month::FEBRUARY);
         $tmp->setDay(29);
         return $tmp->getMonth()->getNumber() === Month::FEBRUARY;

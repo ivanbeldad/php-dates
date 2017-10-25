@@ -34,7 +34,7 @@ class Time implements TimeUpdatable, Equality, JsonSerializable
      * @param int $minute
      * @param int $second
      */
-    public function __construct($hour = 0, $minute = 0, $second = 0)
+    protected function __construct($hour = 0, $minute = 0, $second = 0)
     {
         $this->hour = $hour;
         $this->minute = $minute;
@@ -42,10 +42,29 @@ class Time implements TimeUpdatable, Equality, JsonSerializable
     }
 
     /**
+     * @return Time
+     */
+    public static function now()
+    {
+        return self::fromUnixTime(time());
+    }
+
+    /**
+     * @param int $hour
+     * @param int $minute
+     * @param int $second
+     * @return Time
+     */
+    public static function create($hour = 0, $minute = 0, $second = 0)
+    {
+        return new Time($hour, $minute, $second);
+    }
+
+    /**
      * @param int $time
      * @return Time
      */
-    public static function fromTime($time)
+    public static function fromUnixTime($time = 0)
     {
         $timeObject = new Time();
         $timeObject->updateFromUnixTime($time);
