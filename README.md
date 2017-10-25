@@ -14,28 +14,46 @@ composer require ivandelabeldad/dates
 
 ## Usage
 
-### Create a Date
+### Date, Time, and DateTime
+```php
+// Time only have hour, minute and seconds
+$time = Time::now();
+
+// Date have year, month, day, season and day of week
+$date = Date::now();
+
+// DateTime have date attributes and time either
+$dateTime = DateTime::now();
+```
+
+### Create a Date, Time or DateTime
 ```php
 // FROM YEAR-MONTH-DAY HOUR-MINUTE-SECOND
-$date = Date::createDate(1999, 12, 31);
+$time       = Time::create(12, 45, 0);
+$date       = Date::create(1999, 12, 31);
+$dateTime   = DateTime::create(1999, 12, 31, 12, 45, 0);
 
-// CURRENT TIME
-$now = Date::now();
+// FROM CURRENT TIME
+$time       = Time::now();
+$date       = Date::now();
+$dateTime   = DateTime::now();
 
-// FROM TIME IN SECONDS
-$date = Date::createFromTime(time());
+// FROM TIME IN SECONDS (UNIX TIME)
+$time       = Time::fromUnixTime(time());
+$date       = Date::fromUnixTime(time());
+$dateTime   = DateTime::fromUnixTime(time());
 ```
 
-### Get a Date range
+### Get a Date range (Only Dates)
 ```php
-$startDate = Date::createDate(2000, 1, 1);
-$endDate = Date::createDate(2000, 12, 31);
+$startDate = Date::create(2000, 1, 1);
+$endDate = Date::create(2000, 12, 31);
 
 // Contains every day of the year 2000
-$dates = Date::between($startDate, $endDate);
+$dates = DateUtils::datesBetween($startDate, $endDate);
 ```
 
-### DateList usage
+### DateLists usage
 ```php
 $list = new DateArrayList();
 
@@ -59,10 +77,10 @@ $list->remove(0);
 ### Sorting using lists
 ```php
 // DATES SORTED FROM BEFORE TO AFTER
-$list->sort(new DateTimeComparator());
+$list->sort(new DateNaturalComparator());
 
 // DATES SORTED FROM AFTER TO BEFORE
-$list->sort(new DateTimeComparator(), false);
+$list->sort(new DateNaturalComparator(), false);
 ```
 
 ### Example of filtering usage

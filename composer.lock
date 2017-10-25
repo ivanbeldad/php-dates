@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "139a95066e9993f4a03710b9f9ac95c2",
+    "content-hash": "63df0a8850a625e3a02a360b5301d277",
     "packages": [
         {
             "name": "ivandelabeldad/collections",
-            "version": "1.1.1",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ivandelabeldad/php-collections.git",
-                "reference": "be2f173046349695c0b2f84423fc304b2b0588e2"
+                "reference": "e8adbaaa5a7f7a7d5245719c844e13806104ff6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ivandelabeldad/php-collections/zipball/be2f173046349695c0b2f84423fc304b2b0588e2",
-                "reference": "be2f173046349695c0b2f84423fc304b2b0588e2",
+                "url": "https://api.github.com/repos/ivandelabeldad/php-collections/zipball/e8adbaaa5a7f7a7d5245719c844e13806104ff6d",
+                "reference": "e8adbaaa5a7f7a7d5245719c844e13806104ff6d",
                 "shasum": ""
             },
             "type": "library",
@@ -37,7 +37,7 @@
                 }
             ],
             "description": "Basic Collections library for PHP",
-            "time": "2017-10-25T05:16:49+00:00"
+            "time": "2017-10-25T22:03:27+00:00"
         }
     ],
     "packages-dev": [],

@@ -11,12 +11,11 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "ivandelabeldad/collections": "^1.1.0"
+        "ivandelabeldad/collections": "^1.1.4"
     },
     "autoload": {
         "psr-4": {
-            "Date\\": ["src_old/", "src_old/enum/", "src_old/comparator/"],
-            "Time\\": ["src/", "src/domain/", "src/collections/", "src/util/", "src/util/"]
+            "Date\\": ["src/domain/", "src/collection/", "src/util/", "src/comparator/"]
         }
     }
 }

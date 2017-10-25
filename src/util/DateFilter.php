@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Time;
+namespace Date;
 
 /**
  * Class DateFilter

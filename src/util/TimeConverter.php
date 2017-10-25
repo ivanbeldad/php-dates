@@ -1,6 +1,6 @@
 <?php
 
-namespace Time;
+namespace Date;
 
 class TimeConverter
 {
