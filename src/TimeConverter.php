@@ -6,7 +6,7 @@ class TimeConverter
 {
 
     /** @var int */
-    const DEFAULT_PRECISION = 2;
+    const DEFAULT_PRECISION = 16;
     /** @var float */
     const DAYS_PER_YEAR = 365.25;
     /** @var float */
@@ -60,28 +60,28 @@ class TimeConverter
 
     /**
      * @param float $seconds
-     * @param float $daysPerMonth
      * @param int $precision
+     * @param float $daysPerMonth
      * @return float
      */
     public static function secondsToMonths(
         $seconds,
-        $daysPerMonth = self::DAYS_PER_MONTH,
-        $precision = self::DEFAULT_PRECISION)
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerMonth = self::DAYS_PER_MONTH)
     {
         return round(floatval($seconds / ($daysPerMonth * self::SECONDS_PER_DAY)), $precision);
     }
 
     /**
      * @param float $seconds
-     * @param float $daysPerYear
      * @param int $precision
+     * @param float $daysPerYear
      * @return float
      */
     public static function secondsToYears(
         $seconds,
-        $daysPerYear = self::DAYS_PER_YEAR,
-        $precision = self::DEFAULT_PRECISION)
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerYear = self::DAYS_PER_YEAR)
     {
         return round(floatval($seconds / ($daysPerYear * self::SECONDS_PER_DAY)), $precision);
     }
@@ -118,28 +118,28 @@ class TimeConverter
 
     /**
      * @param float $minutes
-     * @param float $daysPerMonth
      * @param int $precision
+     * @param float $daysPerMonth
      * @return float
      */
     public static function minutesToMonths(
         $minutes,
-        $daysPerMonth = self::DAYS_PER_MONTH,
-        $precision = self::DEFAULT_PRECISION)
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerMonth = self::DAYS_PER_MONTH)
     {
         return round(floatval($minutes / self::MINUTES_PER_DAY / $daysPerMonth), $precision);
     }
 
     /**
      * @param float $minutes
-     * @param float $daysPerYear
      * @param int $precision
+     * @param float $daysPerYear
      * @return float
      */
     public static function minutesToYears(
         $minutes,
-        $daysPerYear = self::DAYS_PER_YEAR,
-        $precision = self::DEFAULT_PRECISION)
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerYear = self::DAYS_PER_YEAR)
     {
         return round(floatval($minutes / self::MINUTES_PER_DAY / $daysPerYear), $precision);
     }
@@ -176,28 +176,28 @@ class TimeConverter
 
     /**
      * @param float $hours
-     * @param float $daysPerMonth
      * @param int $precision
+     * @param float $daysPerMonth
      * @return float
      */
     public static function hoursToMonths(
         $hours,
-        $daysPerMonth = self::DAYS_PER_MONTH,
-        $precision = self::DEFAULT_PRECISION)
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerMonth = self::DAYS_PER_MONTH)
     {
         return round(floatval($hours / self::HOURS_PER_DAY / $daysPerMonth), $precision);
     }
 
     /**
      * @param float $hours
-     * @param float $daysPerYear
      * @param int $precision
+     * @param float $daysPerYear
      * @return float
      */
     public static function hoursToYears(
         $hours,
-        $daysPerYear = self::DAYS_PER_YEAR,
-        $precision = self::DEFAULT_PRECISION)
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerYear = self::DAYS_PER_YEAR)
     {
         return round(floatval($hours / self::HOURS_PER_DAY / $daysPerYear), $precision);
     }
@@ -234,116 +234,116 @@ class TimeConverter
 
     /**
      * @param float $days
-     * @param float $daysPerMonth
      * @param int $precision
+     * @param float $daysPerMonth
      * @return float
      */
     public static function daysToMonths(
         $days,
-        $daysPerMonth = self::DAYS_PER_MONTH,
-        $precision = self::DEFAULT_PRECISION)
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerMonth = self::DAYS_PER_MONTH)
     {
         return round(floatval($days / $daysPerMonth), $precision);
     }
 
     /**
      * @param float $days
-     * @param float $daysPerYear
      * @param int $precision
+     * @param float $daysPerYear
      * @return float
      */
     public static function daysToYears(
         $days,
-        $daysPerYear = self::DAYS_PER_YEAR,
-        $precision = self::DEFAULT_PRECISION)
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerYear = self::DAYS_PER_YEAR)
     {
         return round(floatval($days / $daysPerYear), $precision);
     }
 
     /**
      * @param float $months
-     * @param float $daysPerMonth
      * @param int $precision
+     * @param float $daysPerMonth
      * @return float
      */
     public static function monthsToSeconds(
         $months,
-        $daysPerMonth = self::DAYS_PER_MONTH,
-        $precision = self::DEFAULT_PRECISION)
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerMonth = self::DAYS_PER_MONTH)
     {
         return round(floatval($months * $daysPerMonth * self::SECONDS_PER_DAY), $precision);
     }
 
     /**
      * @param float $months
-     * @param float $daysPerMonth
      * @param int $precision
+     * @param float $daysPerMonth
      * @return float
      */
     public static function monthsToMinutes(
         $months,
-        $daysPerMonth = self::DAYS_PER_MONTH,
-        $precision = self::DEFAULT_PRECISION)
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerMonth = self::DAYS_PER_MONTH)
     {
         return round(floatval($months * $daysPerMonth * self::MINUTES_PER_DAY), $precision);
     }
 
     /**
      * @param float $months
-     * @param float $daysPerMonth
      * @param int $precision
+     * @param float $daysPerMonth
      * @return float
      */
     public static function monthsToHours(
         $months,
-        $daysPerMonth = self::DAYS_PER_MONTH,
-        $precision = self::DEFAULT_PRECISION)
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerMonth = self::DAYS_PER_MONTH)
     {
         return round(floatval($months * $daysPerMonth * self::HOURS_PER_DAY), $precision);
     }
 
     /**
      * @param float $months
-     * @param float $daysPerMonth
      * @param int $precision
+     * @param float $daysPerMonth
      * @return float
      */
     public static function monthsToDays(
         $months,
-        $daysPerMonth = self::DAYS_PER_MONTH,
-        $precision = self::DEFAULT_PRECISION)
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerMonth = self::DAYS_PER_MONTH)
     {
         return round(floatval($months * $daysPerMonth), $precision);
     }
 
     /**
      * @param float $months
+     * @param int $precision
      * @param float $daysPerMonth
      * @param float $daysPerYear
-     * @param int $precision
      * @return float
      */
     public static function monthsToYears(
         $months,
+        $precision = self::DEFAULT_PRECISION,
         $daysPerMonth = self::DAYS_PER_MONTH,
-        $daysPerYear = self::DAYS_PER_YEAR,
-        $precision = self::DEFAULT_PRECISION)
+        $daysPerYear = self::DAYS_PER_YEAR)
     {
-        $seconds = self::monthsToSeconds($months, $daysPerMonth, 100);
-        $years = self::secondsToYears($seconds, $daysPerYear, $precision);
+        $seconds = self::monthsToSeconds($months, $precision, $daysPerMonth);
+        $years = self::secondsToYears($seconds, $precision, $daysPerYear);
         return $years;
     }
 
     /**
      * @param float $years
-     * @param float $daysPerYear
      * @param int $precision
+     * @param float $daysPerYear
      * @return float
      */
     public static function yearsToSeconds(
         $years,
-        $daysPerYear = self::DAYS_PER_YEAR,
-        $precision = self::DEFAULT_PRECISION)
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerYear = self::DAYS_PER_YEAR)
     {
         return round(floatval($years * $daysPerYear * self::SECONDS_PER_DAY), $precision);
     }
@@ -354,45 +354,54 @@ class TimeConverter
      * @param int $precision
      * @return float
      */
-    public static function yearsToMinutes($years, $daysPerYear = self::DAYS_PER_YEAR, $precision = self::DEFAULT_PRECISION)
+    public static function yearsToMinutes(
+        $years,
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerYear = self::DAYS_PER_YEAR)
     {
         return round(floatval($years * $daysPerYear * self::MINUTES_PER_DAY), $precision);
     }
 
     /**
      * @param float $years
-     * @param float $daysPerYear
      * @param int $precision
+     * @param float $daysPerYear
      * @return float
      */
-    public static function yearsToHours($years, $daysPerYear = self::DAYS_PER_YEAR, $precision = self::DEFAULT_PRECISION)
+    public static function yearsToHours(
+        $years,
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerYear = self::DAYS_PER_YEAR)
     {
         return round(floatval($years * $daysPerYear * self::HOURS_PER_DAY), $precision);
     }
 
     /**
      * @param float $years
-     * @param float $daysPerYear
      * @param int $precision
+     * @param float $daysPerYear
      * @return float
      */
-    public static function yearsToDays($years, $daysPerYear = self::DAYS_PER_YEAR, $precision = self::DEFAULT_PRECISION)
+    public static function yearsToDays(
+        $years,
+        $precision = self::DEFAULT_PRECISION,
+        $daysPerYear = self::DAYS_PER_YEAR)
     {
         return round(floatval($years * $daysPerYear), $precision);
     }
 
     /**
      * @param float $years
+     * @param int $precision
      * @param float $daysPerMonth
      * @param float $daysPerYear
-     * @param int $precision
      * @return float
      */
     public static function yearsToMonths(
         $years,
+        $precision = self::DEFAULT_PRECISION,
         $daysPerMonth = self::DAYS_PER_MONTH,
-        $daysPerYear = self::DAYS_PER_YEAR,
-        $precision = self::DEFAULT_PRECISION)
+        $daysPerYear = self::DAYS_PER_YEAR)
     {
         return round(floatval($years * $daysPerYear / $daysPerMonth), $precision);
     }
@@ -404,7 +413,7 @@ class TimeConverter
      * @param float $daysPerYear
      * @return DateObject
      */
-    public static function secondsToDateObject(
+    public static function timeCalculator(
         $time,
         $limit = Measure::DAY,
         $daysPerMonth = self::DAYS_PER_MONTH,
@@ -413,7 +422,7 @@ class TimeConverter
         $time = $time + 0.0000001;
 
         // YEAR
-        $years = TimeConverter::secondsToYears($time, $daysPerYear, 10000);
+        $years = TimeConverter::secondsToYears($time, self::DEFAULT_PRECISION, $daysPerYear);
         $fraction = $years - floor($years);
         if ($limit < Measure::YEAR) {
             $fraction = $years;
@@ -421,7 +430,7 @@ class TimeConverter
         }
 
         // MONTH
-        $months = TimeConverter::yearsToMonths($fraction, $daysPerYear, $daysPerMonth, 10000);
+        $months = TimeConverter::yearsToMonths($fraction, self::DEFAULT_PRECISION, $daysPerMonth, $daysPerYear);
         $fraction = $months - floor($months);
         if ($limit < Measure::MONTH) {
             $fraction = $months;
@@ -429,7 +438,7 @@ class TimeConverter
         }
 
         // DAYS
-        $days = TimeConverter::monthsToDays($fraction, $daysPerMonth, 10000);
+        $days = TimeConverter::monthsToDays($fraction, self::DEFAULT_PRECISION, $daysPerMonth);
         $fraction = $days - floor($days);
         if ($limit < Measure::DAY) {
             $fraction = $days;
@@ -437,7 +446,7 @@ class TimeConverter
         }
 
         // HOURS
-        $hours = TimeConverter::daysToHours($fraction, 10000);
+        $hours = TimeConverter::daysToHours($fraction);
         $fraction = $hours - floor($hours);
         if ($limit < Measure::HOUR) {
             $fraction = $hours;
@@ -445,7 +454,7 @@ class TimeConverter
         }
 
         // MINUTES
-        $minutes = TimeConverter::hoursToMinutes($fraction, 10000);
+        $minutes = TimeConverter::hoursToMinutes($fraction);
         $fraction = $minutes - floor($minutes);
         if ($limit < Measure::MINUTE) {
             $fraction = $minutes;
@@ -453,7 +462,7 @@ class TimeConverter
         }
 
         // SECONDS
-        $seconds = TimeConverter::minutesToSeconds($fraction, 10000);
+        $seconds = TimeConverter::minutesToSeconds($fraction);
 
         $years = floor($years);
         $months = floor($months);
