@@ -6,6 +6,7 @@ use RuntimeException;
 
 class DateFilterBuilder
 {
+
     /** @var Date[] */
     private $dates;
 
@@ -32,7 +33,7 @@ class DateFilterBuilder
     public function filterBySeasons(array $seasons)
     {
         $this->dates = array_filter($this->dates, function(Date $date) use ($seasons) {
-            return in_array($date->getSeasonNumber(), $seasons);
+            return in_array($date->getSeason(), $seasons);
         });
         return $this;
     }
@@ -92,7 +93,7 @@ class DateFilterBuilder
     public function filterByHours(array $hours)
     {
         $this->dates = array_filter($this->dates, function(Date $date) use ($hours) {
-            return in_array($date->getHours(), $hours);
+            return in_array($date->getHour(), $hours);
         });
         return $this;
     }
@@ -104,7 +105,7 @@ class DateFilterBuilder
     public function filterByMinutes(array $minutes)
     {
         $this->dates = array_filter($this->dates, function(Date $date) use ($minutes) {
-            return in_array($date->getMinutes(), $minutes);
+            return in_array($date->getMinute(), $minutes);
         });
         return $this;
     }
@@ -116,7 +117,7 @@ class DateFilterBuilder
     public function filterBySeconds(array $seconds)
     {
         $this->dates = array_filter($this->dates, function(Date $date) use ($seconds) {
-            return in_array($date->getSeconds(), $seconds);
+            return in_array($date->getSecond(), $seconds);
         });
         return $this;
     }

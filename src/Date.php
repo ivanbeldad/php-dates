@@ -12,13 +12,11 @@ class Date extends DateObject
 
     /**
      * Date constructor.
-     * @param int $time
      */
-    public function __construct($time = null)
+    public function __construct()
     {
         parent::__construct([]);
-        if ($time === null) $time = time();
-        $this->setTime($time);
+        $this->setTime(time());
     }
 
     /**
@@ -30,10 +28,33 @@ class Date extends DateObject
      * @param int $second
      * @return Date
      */
-    static public function createDate($year, $month, $day, $hour = 0, $minute = 0, $second = 0)
+    public static function createDate($year, $month, $day, $hour = 0, $minute = 0, $second = 0)
     {
+        $date = new Date();
         $time = mktime($hour, $minute, $second, $month, $day, $year);
-        return new Date($time);
+        $date->setTime($time);
+        return $date;
+    }
+
+    /**
+     * @return Date
+     */
+    public static function now()
+    {
+        $date = new Date();
+        $date->setTime(time());
+        return $date;
+    }
+
+    /**
+     * @param int $time
+     * @return Date
+     */
+    public static function createFromTime($time)
+    {
+        $date = new Date();
+        $date->setTime($time);
+        return $date;
     }
 
     /** @param $time */
@@ -102,9 +123,9 @@ class Date extends DateObject
     }
 
     /**
-     * @param int $wday
+     * @param int $dayOfWeek
      */
-    public function setWday($wday)
+    public function setDayOfWeek($dayOfWeek)
     {
     }
 

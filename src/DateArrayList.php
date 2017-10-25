@@ -12,16 +12,16 @@ class DateArrayList extends ArrayList
 
     /**
      * DateArrayList constructor.
-     * @param Date[] $elements
+     * @param DateObject[] $elements
      */
     public function __construct(array $elements = [])
     {
-        $this->type = new Date();
+        $this->type = new DateObject();
         parent::__construct($elements);
     }
 
     /**
-     * @param Date $element
+     * @param DateObject $element
      */
     public function add($element)
     {
@@ -30,7 +30,7 @@ class DateArrayList extends ArrayList
 
     /**
      * @param int $index
-     * @param Date $element
+     * @param DateObject $element
      */
     public function addAt($index, $element)
     {
@@ -38,7 +38,7 @@ class DateArrayList extends ArrayList
     }
 
     /**
-     * @param Date[] $elements
+     * @param DateObject[] $elements
      */
     public function addAll($elements)
     {
@@ -47,7 +47,7 @@ class DateArrayList extends ArrayList
 
     /**
      * @param int $index
-     * @param Date[] $elements
+     * @param DateObject[] $elements
      */
     public function addAllAt($index, $elements)
     {
@@ -56,7 +56,7 @@ class DateArrayList extends ArrayList
 
     /**
      * @param int $index
-     * @return Date
+     * @return DateObject
      */
     public function get($index)
     {
@@ -88,7 +88,7 @@ class DateArrayList extends ArrayList
     }
 
     /**
-     * @return Date[]
+     * @return DateObject[]
      */
     public function toArray()
     {
@@ -96,7 +96,7 @@ class DateArrayList extends ArrayList
     }
 
     /**
-     * @param Date $element
+     * @param DateObject $element
      * @return bool
      */
     public function containts($element)
@@ -105,7 +105,7 @@ class DateArrayList extends ArrayList
     }
 
     /**
-     * @param Date $element
+     * @param DateObject $element
      * @return int
      */
     public function indexOf($element)
