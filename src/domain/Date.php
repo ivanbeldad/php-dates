@@ -60,6 +60,15 @@ class Date implements Equality, TimeUpdatable, JsonSerializable
     }
 
     /**
+     * @param DateTime $dateTime
+     * @return Date
+     */
+    public static function fromDateTime(DateTime $dateTime)
+    {
+        return Date::create($dateTime->getYear(), $dateTime->getMonth()->getNumber(), $dateTime->getDay());
+    }
+
+    /**
      * @param int $year
      * @param int $month
      * @param int $day

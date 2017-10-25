@@ -72,6 +72,15 @@ class Time implements TimeUpdatable, Equality, JsonSerializable
     }
 
     /**
+     * @param DateTime $dateTime
+     * @return Time
+     */
+    public static function fromDateTime(DateTime $dateTime)
+    {
+        return Time::create($dateTime->getHour(), $dateTime->getMinute(), $dateTime->getSecond());
+    }
+
+    /**
      * @return int
      */
     public function getUnixTime()

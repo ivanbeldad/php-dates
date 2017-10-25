@@ -48,6 +48,24 @@ class DateTime implements Equality, TimeUpdatable, JsonSerializable
     }
 
     /**
+     * @param Date $date
+     * @return DateTime
+     */
+    public static function fromDate(Date $date)
+    {
+        return DateTime::create($date->getYear(), $date->getMonth()->getNumber(), $date->getDay());
+    }
+
+    /**
+     * @param Time $time
+     * @return DateTime
+     */
+    public static function fromTime(Time $time)
+    {
+        return DateTime::create(1970, 1, 1, $time->getHour(), $time->getMinute(), $time->getSecond());
+    }
+
+    /**
      * @param int $year
      * @param int $month
      * @param int $day
