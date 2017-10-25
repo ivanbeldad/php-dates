@@ -9,8 +9,8 @@ interface DateComparator extends Comparator
 {
 
     /**
-     * @param Date $o1
-     * @param Date $o2
+     * @param DateObject $o1
+     * @param DateObject $o2
      * @return int
      */
     function compareTo($o1, $o2);

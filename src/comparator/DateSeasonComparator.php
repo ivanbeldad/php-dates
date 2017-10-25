@@ -11,7 +11,7 @@ class DateSeasonComparator implements DateComparator
 
     function compareTo($o1, $o2)
     {
-        return $o1->getSeasonNumber() > $o2->getSeasonNumber();
+        return $o1->getSeason() > $o2->getSeason();
     }
 
 }
