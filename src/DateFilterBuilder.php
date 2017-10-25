@@ -7,23 +7,17 @@ use RuntimeException;
 class DateFilterBuilder
 {
 
-    /** @var Date[] */
-    private $dates;
+    /** @var DateFilter */
+    private $dateFilter;
 
     /**
      * DateFilterBuilder constructor.
-     * @param Date[] $dates
+     * @param DateFilter $dateFilter
      */
-    private function __construct(array $dates)
+    public function __construct(DateFilter $dateFilter)
     {
-        $this->dates = $dates;
+        $this->dateFilter = $dateFilter;
         $this->checkErrors();
-        new Date();
-    }
-
-    public static function generate(array $dates)
-    {
-        return new DateFilterBuilder($dates);
     }
 
     /**
@@ -32,9 +26,7 @@ class DateFilterBuilder
      */
     public function filterBySeasons(array $seasons)
     {
-        $this->dates = array_filter($this->dates, function(Date $date) use ($seasons) {
-            return in_array($date->getSeason(), $seasons);
-        });
+        $this->dateFilter->filterBySeasons($seasons);
         return $this;
     }
 
@@ -44,9 +36,7 @@ class DateFilterBuilder
      */
     public function filterByYears(array $years)
     {
-        $this->dates = array_filter($this->dates, function(Date $date) use ($years) {
-            return in_array($date->getYear(), $years);
-        });
+        $this->dateFilter->filterByYears($years);
         return $this;
     }
 
@@ -56,9 +46,7 @@ class DateFilterBuilder
      */
     public function filterByMonths(array $month)
     {
-        $this->dates = array_filter($this->dates, function(Date $date) use ($month) {
-            return in_array($date->getMonth(), $month);
-        });
+        $this->dateFilter->filterByMonths($month);
         return $this;
     }
 
@@ -68,9 +56,7 @@ class DateFilterBuilder
      */
     public function filterByDaysOfMonths(array $days)
     {
-        $this->dates = array_filter($this->dates, function(Date $date) use ($days) {
-            return in_array($date->getDay(), $days);
-        });
+        $this->dateFilter->filterByDaysOfMonths($days);
         return $this;
     }
 
@@ -80,9 +66,7 @@ class DateFilterBuilder
      */
     public function filterByDaysOfWeek(array $days)
     {
-        $this->dates = array_filter($this->dates, function(Date $date) use ($days) {
-            return in_array($date->getDayOfWeek(), $days);
-        });
+        $this->dateFilter->filterByDaysOfWeek($days);
         return $this;
     }
 
@@ -92,9 +76,7 @@ class DateFilterBuilder
      */
     public function filterByHours(array $hours)
     {
-        $this->dates = array_filter($this->dates, function(Date $date) use ($hours) {
-            return in_array($date->getHour(), $hours);
-        });
+        $this->dateFilter->filterByHours($hours);
         return $this;
     }
 
@@ -104,9 +86,7 @@ class DateFilterBuilder
      */
     public function filterByMinutes(array $minutes)
     {
-        $this->dates = array_filter($this->dates, function(Date $date) use ($minutes) {
-            return in_array($date->getMinute(), $minutes);
-        });
+        $this->dateFilter->filterByMinutes($minutes);
         return $this;
     }
 
@@ -116,23 +96,21 @@ class DateFilterBuilder
      */
     public function filterBySeconds(array $seconds)
     {
-        $this->dates = array_filter($this->dates, function(Date $date) use ($seconds) {
-            return in_array($date->getSecond(), $seconds);
-        });
+        $this->dateFilter->filterBySeconds($seconds);
         return $this;
     }
 
     /**
-     * @return Date[]
+     * @return DateArrayList
      */
     public function build()
     {
-        return array_values($this->dates);
+        return $this->dateFilter->get();
     }
 
     private function checkErrors()
     {
-        foreach ($this->dates as $date) {
+        foreach ($this->dateFilter->get() as $date) {
             if (!($date instanceof Date)) {
                 throw new RuntimeException("DateFilterBuilder only can receive an array of Dates");
             }
