@@ -58,7 +58,7 @@ class DateFilter
     public function filterByMonths(array $month)
     {
         $this->dateArrayList = $this->dateArrayList->filter(function (Date $date) use ($month) {
-            return in_array($date->getMonth(), $month);
+            return in_array($date->getMonth()->getNumber(), $month);
         });
         return $this;
     }
@@ -82,7 +82,7 @@ class DateFilter
     public function filterByDaysOfWeek(array $days)
     {
         $this->dateArrayList = $this->dateArrayList->filter(function (Date $date) use ($days) {
-            return in_array($date->getDayOfWeek(), $days);
+            return in_array($date->getDayOfWeek()->getNumber(), $days);
         });
         return $this;
     }
@@ -94,7 +94,7 @@ class DateFilter
     public function filterBySeasons(array $seasons)
     {
         $this->dateArrayList = $this->dateArrayList->filter(function (Date $date) use ($seasons) {
-            return in_array($date->getSeason(), $seasons);
+            return in_array($date->getSeason()->getNumber(), $seasons);
         });
         return $this;
     }
