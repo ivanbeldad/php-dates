@@ -137,7 +137,7 @@ class TimeArrayList extends ArrayList
      * @param callable|TimeComparator $comparator
      * @param bool $ascendent
      */
-    public function sort($comparator, $ascendent = true)
+    public function sort($comparator = null, $ascendent = true)
     {
         parent::sort($comparator, $ascendent);
     }

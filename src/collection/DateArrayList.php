@@ -137,7 +137,7 @@ class DateArrayList extends ArrayList
      * @param callable|DateComparator $comparator
      * @param bool $ascendent
      */
-    public function sort($comparator, $ascendent = true)
+    public function sort($comparator = null, $ascendent = true)
     {
         parent::sort($comparator, $ascendent);
     }
