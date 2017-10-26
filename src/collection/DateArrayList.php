@@ -20,8 +20,8 @@ class DateArrayList extends ArrayList
      */
     public function __construct(array $elements = [])
     {
-        $this->type = Date::now();
         parent::__construct($elements);
+        $this->type = Date::now();
     }
 
     /**
