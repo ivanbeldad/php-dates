@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "ivandelabeldad/collections",
-            "version": "1.1.4",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ivandelabeldad/php-collections.git",
-                "reference": "e8adbaaa5a7f7a7d5245719c844e13806104ff6d"
+                "reference": "2d4e6500a12e4c0729e6d6163878c5f044549154"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ivandelabeldad/php-collections/zipball/e8adbaaa5a7f7a7d5245719c844e13806104ff6d",
-                "reference": "e8adbaaa5a7f7a7d5245719c844e13806104ff6d",
+                "url": "https://api.github.com/repos/ivandelabeldad/php-collections/zipball/2d4e6500a12e4c0729e6d6163878c5f044549154",
+                "reference": "2d4e6500a12e4c0729e6d6163878c5f044549154",
                 "shasum": ""
             },
             "type": "library",
@@ -37,7 +37,7 @@
                 }
             ],
             "description": "Basic Collections library for PHP",
-            "time": "2017-10-25T22:03:27+00:00"
+            "time": "2017-10-26T01:53:20+00:00"
         }
     ],
     "packages-dev": [],

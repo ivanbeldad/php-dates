@@ -2,14 +2,16 @@
 
 namespace Date;
 
+use Collection\Comparable;
 use Collection\Equality;
 use JsonSerializable;
+use RuntimeException;
 
 /**
  * Class Date
  * @package Time
  */
-class Date implements Equality, TimeUpdatable, JsonSerializable
+class Date implements Equality, Comparable, TimeUpdatable, JsonSerializable
 {
 
     /** @const int */
@@ -242,6 +244,18 @@ class Date implements Equality, TimeUpdatable, JsonSerializable
             ],
             "unixTime" => $this->unixTime,
         ];
+    }
+
+    /**
+     * @param Date $object
+     * @return bool
+     */
+    public function compareTo($object)
+    {
+        if (!($object instanceof Date)) {
+            throw new RuntimeException("Date.compareTo must receive a Date instance.");
+        }
+        return $this->unixTime > $object->unixTime;
     }
 
 }
